@@ -1,6 +1,7 @@
 <script setup>
 import { MediaPlayer } from 'dashjs';
 import { ref, onMounted, onUnmounted } from 'vue';
+import Button from '@/components/ui/Button.vue';
 
 const videoPlayer = ref(null);
 
@@ -59,7 +60,6 @@ const attemptPlay = () => {
       class="w-full h-screen object-none object-center"
       muted
       loop
-      playsinline
     ></video>
 
     <div
@@ -70,6 +70,7 @@ const attemptPlay = () => {
           {{ title }}
         </h1>
         <p class="text-lg md:text-2xl mb-8">{{ description }}</p>
+        <Button buttonText="WATCH NOW" />
       </div>
     </div>
   </section>
