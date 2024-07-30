@@ -39,6 +39,7 @@ onMounted(() => {
       class="w-full h-screen object-none object-center"
       autoplay
       muted
+      :poster="heroBackground"
     ></video>
 
     <div
