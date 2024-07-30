@@ -60,6 +60,7 @@ const attemptPlay = () => {
       class="w-full h-screen object-none object-center"
       muted
       loop
+      playsinline
     ></video>
 
     <div
