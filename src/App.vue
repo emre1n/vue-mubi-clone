@@ -1,5 +1,13 @@
-<script setup></script>
+<script setup>
+import Navbar from '@/components/Navbar.vue';
+import Hero from '@/components/Hero.vue';
+</script>
 
 <template>
-  <h1 class="text-2xl font-sans">MUBI</h1>
+  <Navbar />
+  <Hero
+    title="Cinematic Masterpiece"
+    description="Experience the film that's captivating audiences worldwide."
+    altText="Film of the day"
+  />
 </template>
