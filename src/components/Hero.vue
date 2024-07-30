@@ -29,7 +29,10 @@ onMounted(() => {
   attemptPlay();
 
   // Fallback for devices that don't support immediate autoplay
-  player.on('canPlay', attemptPlay);
+  player.on('canPlay', () => {
+    isVideoReady.value = true;
+    attemptPlay();
+  });
 
   // Add event listeners for user interaction
   document.addEventListener('click', attemptPlay);
@@ -55,6 +58,12 @@ const attemptPlay = () => {
 
 <template>
   <section class="relative">
+    <img
+      :src="heroBackground"
+      :alt="altText"
+      class="w-full h-screen object-cover object-left lg:object-center"
+      v-if="!isVideoReady"
+    />
     <video
       ref="videoPlayer"
       class="w-full h-screen object-none object-center"
