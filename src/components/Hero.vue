@@ -23,7 +23,7 @@ defineProps({
     <img
       :src="heroBackground"
       :alt="altText"
-      class="w-full object-cover object-center"
+      class="w-full h-screen object-cover object-left lg:object-center"
     />
 
     <div
