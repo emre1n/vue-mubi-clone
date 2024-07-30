@@ -75,7 +75,7 @@ const attemptPlay = () => {
     ></video>
 
     <div
-      class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center"
+      class="absolute h-screen inset-0 bg-black bg-opacity-30 flex items-center justify-center"
     >
       <div class="text-center text-white p-4">
         <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-4">
