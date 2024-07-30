@@ -25,6 +25,8 @@ onMounted(() => {
   let player = MediaPlayer().create();
   player.initialize(document.querySelector('#videoPlayer'), url, true);
 });
+let videoElement = document.querySelector('#videoPlayer');
+videoElement.muted = true;
 </script>
 
 <template>
