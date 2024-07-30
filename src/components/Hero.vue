@@ -2,8 +2,10 @@
 import { MediaPlayer } from 'dashjs';
 import { ref, onMounted, onUnmounted } from 'vue';
 import Button from '@/components/ui/Button.vue';
+import heroBackground from '@/assets/img/hero-w1280.webp';
 
 const videoPlayer = ref(null);
+const isVideoReady = ref(false);
 
 defineProps({
   title: {
