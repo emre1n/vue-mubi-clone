@@ -6,6 +6,7 @@ import heroBackground from '@/assets/img/hero-w1280.webp';
 
 const videoPlayer = ref(null);
 const isVideoReady = ref(false);
+const isHighQuality = ref(false);
 
 defineProps({
   title: {
@@ -24,7 +25,7 @@ onMounted(() => {
   const url =
     'https://videos.mubicdn.net/preview/f5d1660dca6d4873716e126b6718a02c/66a9386a/fa57f82c/616/708/mubi-films/173000/bergman-island_eng_zxx_1920x960_50000_mezz37316/007afea484/playlist.e130d2bf80.ism/default/ver1.AVC1.2160p.mpd';
   player = MediaPlayer().create();
-  player.initialize(videoPlayer.value, url, true);
+  player.initialize(videoPlayer.value, url, false);
   player.setMute(true);
 
   // Attempt to play immediately
@@ -34,6 +35,14 @@ onMounted(() => {
   player.on('canPlay', () => {
     isVideoReady.value = true;
     attemptPlay();
+  });
+
+  player.on('qualityChangeRendered', e => {
+    // Assuming the highest quality is the last in the list
+    const qualities = player.getBitrateInfoListFor('video');
+    if (e.newQuality === qualities.length - 1) {
+      isHighQuality.value = true;
+    }
   });
 
   // Add event listeners for user interaction
@@ -64,7 +73,7 @@ const attemptPlay = () => {
       :src="heroBackground"
       :alt="altText"
       class="w-full h-screen object-cover object-left lg:object-center"
-      v-if="!isVideoReady"
+      v-if="!isVideoReady || !isHighQuality"
     />
     <video
       ref="videoPlayer"
@@ -72,6 +81,7 @@ const attemptPlay = () => {
       muted
       loop
       playsinline
+      v-show="isVideoReady && isHighQuality"
     ></video>
 
     <div
