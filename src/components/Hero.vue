@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from 'vue';
 import Button from '@/components/ui/Button.vue';
 import heroBackground from '@/assets/img/hero-w1280.webp';
 
