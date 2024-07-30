@@ -1,6 +1,8 @@
 <script setup>
+import { MediaPlayer } from 'dashjs';
 import Button from '@/components/ui/Button.vue';
 import heroBackground from '@/assets/img/hero-w1280.webp';
+import { ref, onMounted } from 'vue';
 
 defineProps({
   altText: {
@@ -16,15 +18,28 @@ defineProps({
     default: 'Discover our carefully curated selection of films.',
   },
 });
+
+onMounted(() => {
+  let url =
+    'https://videos.mubicdn.net/preview/f5d1660dca6d4873716e126b6718a02c/66a9386a/fa57f82c/616/708/mubi-films/173000/bergman-island_eng_zxx_1920x960_50000_mezz37316/007afea484/playlist.e130d2bf80.ism/default/ver1.AVC1.2160p.mpd';
+  let player = MediaPlayer().create();
+  player.initialize(document.querySelector('#videoPlayer'), url, true);
+});
 </script>
 
 <template>
   <section class="relative">
-    <img
+    <!-- <img
       :src="heroBackground"
       :alt="altText"
       class="w-full h-screen object-cover object-left lg:object-center"
-    />
+    /> -->
+    <video
+      id="videoPlayer"
+      class="w-full h-screen object-none object-center"
+      autoplay
+      muted
+    ></video>
 
     <div
       class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center"

@@ -4,7 +4,9 @@ import HamburgerIcon from '@/components/HamburgerIcon.vue';
 </script>
 
 <template>
-  <nav class="flex justify-center items-center h-14 border-b px-5">
+  <nav
+    class="absolute inset-0 z-10 flex justify-center items-center h-14 border-b px-5 bg-white"
+  >
     <div
       class="flex justify-between items-center w-full max-w-3xl lg:max-w-6xl"
     >
