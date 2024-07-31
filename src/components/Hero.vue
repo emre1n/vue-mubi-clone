@@ -40,10 +40,7 @@ onMounted(() => {
   player.on('qualityChangeRendered', e => {
     // Assuming the highest quality is the last in the list
     const qualities = player.getBitrateInfoListFor('video');
-    if (
-      e.newQuality === qualities.length - 1 ||
-      e.newQuality === qualities.length - 2
-    ) {
+    if (e.newQuality === qualities.length - 1) {
       isHighQuality.value = true;
     }
   });
