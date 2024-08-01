@@ -115,7 +115,7 @@ const attemptPlay = () => {
             <div class="flex">
               <input
                 type="text"
-                class="w-48 sm:w-72 py-2 px-3 sm:py-5 sm:px-4 text-base outline-none"
+                class="w-48 sm:w-72 py-2 px-3 sm:py-5 sm:px-4 text-base outline-none rounded-none"
                 placeholder="Email address"
               />
               <Button buttonText="WATCH NOW" />
