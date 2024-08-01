@@ -14,7 +14,7 @@ const handleClick = () => {
 <template>
   <button
     @click="handleClick"
-    class="px-6 py-3 bg-primary text-white font-bold hover:bg-primaryLight"
+    class="px-4 py-3 sm:px-7 sm:py-4 bg-primary text-white text-base sm:text-lg md:text-2xl font-bold hover:bg-primaryLight"
   >
     {{ buttonText }}
   </button>
