@@ -105,7 +105,9 @@ const attemptPlay = () => {
             {{ featuredFilm.title }}
           </h1>
         </div>
-        <div class="flex flex-col-reverse md:flex-col justify-between h-56">
+        <div
+          class="flex flex-col-reverse md:flex-col justify-between h-20 sm:h-56"
+        >
           <div class="flex flex-col gap-2 sm:gap-3 md:gap-2">
             <h2
               class="text-white font-bold sm:font-normal sm:text-2xl md:text-xl text-start"
@@ -122,7 +124,7 @@ const attemptPlay = () => {
             </div>
           </div>
           <div>
-            <div class="flex flex-col">
+            <div class="hidden sm:flex flex-col">
               <div class="text-white text-sm text-start">
                 DIRECTED BY
                 <span class="font-bold">{{ featuredFilm.director }}</span>
@@ -133,7 +135,9 @@ const attemptPlay = () => {
                 {{ featuredFilm.country }} {{ featuredFilm.year }}
               </div>
               <div class="my-10">
-                <p class="md:hidden text-white text-sm text-start">
+                <p
+                  class="hidden sm:block md:hidden text-white text-sm text-start"
+                >
                   {{ featuredFilm.shortSynopsis }}
                 </p>
               </div>
