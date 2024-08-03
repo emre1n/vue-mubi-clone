@@ -1,0 +1,116 @@
+[
+  {
+    "id": 1,
+    "title": "Bergman Island",
+    "directors": [
+      {
+        "name": "Mia Hansen-Løve",
+        "name_upcase": "MIA HANSEN-LØVE",
+        "slug": "mia-hansen-love"
+      }
+    ],
+    "year": 2021,
+    "artworks": [
+      {
+        "format": "tile_artwork",
+        "locale": null,
+        "image_url": "https://images.mubicdn.net/images/film/22844/cache-987955-1722436193/image-w1280.jpg?size=400x"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "The French Dispatch",
+    "directors": [
+      {
+        "name": "Wes Anderson",
+        "name_upcase": "WES ANDERSON",
+        "slug": "wes-anderson"
+      }
+    ],
+    "year": 2021,
+    "artworks": [
+      {
+        "format": "tile_artwork",
+        "locale": null,
+        "image_url": "https://assets.mubicdn.net/images/artworks/664932/images-original.png?1707224847"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "The Souvenir",
+    "directors": [
+      {
+        "name": "Joanna Hogg",
+        "name_upcase": "JOANNA HOGG",
+        "slug": "joanna-hogg"
+      }
+    ],
+    "year": 2019,
+    "artworks": [
+      {
+        "format": "tile_artwork",
+        "locale": null,
+        "image_url": "https://images.mubicdn.net/images/film/39248/cache-984672-1721289482/image-w1280.jpg?size=400x"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "The Souvenir: Part II",
+    "directors": [
+      {
+        "name": "Joanna Hogg",
+        "name_upcase": "JOANNA HOGG",
+        "slug": "joanna-hogg"
+      }
+    ],
+    "year": 2021,
+    "artworks": [
+      {
+        "format": "tile_artwork",
+        "locale": null,
+        "image_url": "https://images.mubicdn.net/images/film/332942/cache-754345-1721739951/image-w1280.jpg?size=400x"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "The Velvet Underground",
+    "directors": [
+      {
+        "name": "Todd Haynes",
+        "name_upcase": "TODD HAYNES",
+        "slug": "todd-haynes"
+      }
+    ],
+    "year": 2021,
+    "artworks": [
+      {
+        "format": "tile_artwork",
+        "locale": null,
+        "image_url": "https://assets.mubicdn.net/images/artworks/664932/images-original.png?1707224847"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "The Worst Person in the World",
+    "directors": [
+      {
+        "name": "Joachim Trier",
+        "name_upcase": "JOACHIM TRIER",
+        "slug": "joachim-trier"
+      }
+    ],
+    "year": 2021,
+    "artworks": [
+      {
+        "format": "tile_artwork",
+        "locale": null,
+        "image_url": "https://assets.mubicdn.net/images/artworks/664932/images-original.png?1707224847"
+      }
+    ]
+  }
+]

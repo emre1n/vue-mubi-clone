@@ -1,5 +1,7 @@
 <script setup>
-import { defineProps, ref, watchEffect } from 'vue';
+import { ref, watchEffect } from 'vue';
+import FilmListing from '@/components/FilmListing.vue';
+import ChevronRightIcon from '@/components/icons/ChevronRightIcon.vue';
 
 const props = defineProps({
   films: {
@@ -8,6 +10,10 @@ const props = defineProps({
   },
   limit: {
     type: Number,
+  },
+  sectionHeader: {
+    type: String,
+    default: 'Collection',
   },
 });
 
@@ -27,26 +33,25 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div class="flex justify-center items-center pt-6">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
-      <div
-        class="relative w-80 h-52"
-        v-for="film in props.films.slice(0, limit || props.films.length)"
-        :key="film.id"
-      >
-        <img
-          class="object-cover w-full h-full"
-          :src="film.artworks[0].image_url"
-          :alt="films.title"
-        />
-        <div class="absolute bottom-0 text-white px-5 pb-4">
-          <h3 class="uppercase text-xl font-bold leading-tight">
-            {{ film.title }}
-          </h3>
-          <p class="text-xs leading-tight">
-            <span class="font-bold">{{ film.director }}</span> {{ film.year }}
-          </p>
+  <div class="flex justify-center items-center pt-6 group">
+    <div class="flex flex-col gap-1">
+      <div class="flex items-center gap-2">
+        <div class="text-sm font-bold uppercase cursor-pointer">
+          {{ sectionHeader }}
         </div>
+        <div
+          class="flex items-center gap-1 text-accent text-sm cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity hover:text-black"
+        >
+          <div class="text-sms">SEE ALL</div>
+          <ChevronRightIcon />
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
+        <FilmListing
+          v-for="film in props.films.slice(0, limit || props.films.length)"
+          :key="film.id"
+          :film="film"
+        />
       </div>
     </div>
   </div>
