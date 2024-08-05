@@ -11,24 +11,24 @@ import HamburgerIcon from '@/components/HamburgerIcon.vue';
       class="flex justify-between items-center w-full max-w-3xl lg:max-w-6xl"
     >
       <HamburgerIcon class="flex lg:hidden" />
-      <a href="index.html">
+      <a href="/">
         <MubiLogo />
       </a>
       <div class="flex items-center gap-5">
         <div class="hidden lg:flex gap-5">
           <a
-            href="index.html"
+            href="/now-showing"
             class="text-base-300 font-work font-medium hover:text-base-100"
             >NOW SHOWING</a
           >
           <a
-            href="notebook.html"
+            href="/notebook"
             class="text-base-300 font-work font-medium hover:text-base-100"
             >NOTEBOOK</a
           >
         </div>
         <a
-          href="login.html"
+          href="/login"
           class="text-base-300 font-work font-medium hover:text-base-100"
           >LOGIN</a
         >

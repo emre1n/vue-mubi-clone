@@ -15,6 +15,11 @@
         "format": "tile_artwork",
         "locale": null,
         "image_url": "https://images.mubicdn.net/images/film/22844/cache-987955-1722436193/image-w1280.jpg?size=400x"
+      },
+      {
+        "format": "cover_artwork_vertical",
+        "locale": null,
+        "image_url": "https://assets.mubicdn.net/images/artworks/664953/images-original.png?1707224900"
       }
     ]
   },
