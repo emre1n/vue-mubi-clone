@@ -1,7 +1,9 @@
 <script setup>
-defineProps({
+const props = defineProps({
   film: Object,
 });
+
+console.log('film', props.film);
 </script>
 
 <template>
