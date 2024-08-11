@@ -2,15 +2,13 @@
 const props = defineProps({
   film: Object,
 });
-
-console.log('film', props.film);
 </script>
 
 <template>
   <div class="relative w-80 h-52">
     <img
       class="object-cover w-full h-full"
-      :src="film.artworks[0].image_url"
+      :src="film.stills.standard"
       :alt="film.title"
     />
     <div class="absolute bottom-0 text-white px-5 pb-4">

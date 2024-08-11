@@ -2,7 +2,6 @@
 import { onMounted, ref } from 'vue';
 import Hero from '@/components/Hero.vue';
 import FilmListings from '@/components/FilmListings.vue';
-// import films from '@/data/films.json';
 import axiosInstance from '@/api/axios';
 ``;
 // import { useFilms } from '@/composables/useFilms';
