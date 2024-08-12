@@ -18,15 +18,16 @@ const featuredFilm = {
 
 onMounted(async () => {
   try {
-    const response = await axiosInstance.get('/browse/films', {
-      params: {
-        page: 1,
-        per_page: 28,
-        sort: 'title',
-        playable: true,
-      },
-    });
-    films.value = response.data.films;
+    const response = await axiosInstance.get(
+      '/lists/mubi-releases/list_films',
+      {
+        params: {
+          page: 1,
+          per_page: 28,
+        },
+      }
+    );
+    films.value = response.data.list_films;
     console.log('films', films.value);
   } catch (error) {
     console.error('Error fetching films:', error);
