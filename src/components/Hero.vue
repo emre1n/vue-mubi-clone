@@ -84,7 +84,7 @@ const attemptPlay = () => {
     <img
       :src="heroBackground"
       :alt="featuredFilm.altText"
-      class="w-full h-screen object-cover object-left lg:object-center"
+      class="w-full h-screen object-cover object-center"
       v-if="!isVideoReady || !isHighQuality"
     />
     <video
