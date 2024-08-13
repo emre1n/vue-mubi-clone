@@ -2,12 +2,9 @@
 import { ref, watchEffect } from 'vue';
 import FilmListing from '@/components/FilmListing.vue';
 import ChevronRightIcon from '@/components/icons/ChevronRightIcon.vue';
+import { useFetchFilms } from '@/composables/useFetchFilms';
 
 const props = defineProps({
-  films: {
-    type: Array,
-    default: () => [],
-  },
   limit: {
     type: Number,
   },
@@ -15,7 +12,13 @@ const props = defineProps({
     type: String,
     default: 'Collection',
   },
+  listName: {
+    type: String,
+    default: 'mubi-releases',
+  },
 });
+
+const { films } = useFetchFilms(props.listName);
 
 const limit = ref(props.limit);
 
@@ -48,7 +51,7 @@ watchEffect(() => {
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
         <FilmListing
-          v-for="film in props.films.slice(0, limit || props.films.length)"
+          v-for="film in films.slice(0, limit || films.length)"
           :key="film.id"
           :film="film"
         />

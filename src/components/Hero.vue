@@ -31,7 +31,7 @@ let player;
 
 onMounted(() => {
   const url =
-    'https://videos.mubicdn.net/preview/f5d1660dca6d4873716e126b6718a02c/66a9386a/fa57f82c/616/708/mubi-films/173000/bergman-island_eng_zxx_1920x960_50000_mezz37316/007afea484/playlist.e130d2bf80.ism/default/ver1.AVC1.2160p.mpd';
+    'https://videos.mubicdn.net/preview/f1e3c6a4c47e36d6c5b1926a5a6ba12d/66bc39fe/2ca71db0/1049/1134/mubi-films/344540/memory_eng_zxx_1920x960_50000_mezz44023/3f3cafb4fd/playlist.964582bec3.ism/default/ver1.AVC1.2160p.ex-eac3.mpd';
   player = MediaPlayer().create();
   player.initialize(videoPlayer.value, url, false);
   player.setMute(true);
