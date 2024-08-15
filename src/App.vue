@@ -4,7 +4,7 @@ import { RouterView } from 'vue-router';
 </script>
 
 <template>
-  <div class="relative">
+  <div class="relative py-8">
     <Navbar />
     <RouterView />
   </div>
