@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watchEffect } from 'vue';
+import { ref, watchEffect, RouterLink } from 'vue';
 import FilmListing from '@/components/FilmListing.vue';
 import ChevronRightIcon from '@/components/icons/ChevronRightIcon.vue';
 import { useFetchFilms } from '@/composables/useFetchFilms';
@@ -38,17 +38,21 @@ watchEffect(() => {
 <template>
   <div class="flex justify-center items-center pt-6 group">
     <div class="flex flex-col gap-1">
-      <div class="flex items-center gap-2">
+      <RouterLink
+        :to="'/collections/' + listName"
+        class="flex items-center gap-2"
+      >
         <div class="text-sm font-bold uppercase cursor-pointer">
           {{ sectionHeader }}
         </div>
         <div
           class="flex items-center gap-1 text-accent text-sm cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity hover:text-black"
         >
-          <div class="text-sms">SEE ALL</div>
+          <div>SEE ALL</div>
           <ChevronRightIcon />
         </div>
-      </div>
+      </RouterLink>
+
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
         <FilmListing
           v-for="film in films.slice(0, limit || films.length)"

@@ -20,8 +20,8 @@ const featuredFilm = {
     :limit="4"
   />
   <FilmListings
-    sectionHeader="New on mubi"
-    listName="mubi-releases"
+    sectionHeader="The top 1000"
+    listName="the-top-1000"
     :limit="4"
   />
 </template>
