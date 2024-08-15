@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watchEffect, RouterLink } from 'vue';
+import { ref, watchEffect } from 'vue';
 import FilmListing from '@/components/FilmListing.vue';
 import ChevronRightIcon from '@/components/icons/ChevronRightIcon.vue';
 import { useFetchFilms } from '@/composables/useFetchFilms';
