@@ -25,7 +25,11 @@ const limit = ref(props.limit);
 const updateLimit = () => {
   const isSmallScreen = window.matchMedia('(max-width: 640px)').matches;
   const isLargeScreen = window.matchMedia('(min-width: 1024px)').matches;
-  limit.value = isSmallScreen || isLargeScreen ? 3 : props.limit;
+  if (props.limit === 0) {
+    limit.value = films.value.length;
+  } else {
+    limit.value = isSmallScreen || isLargeScreen ? 3 : props.limit;
+  }
 };
 
 watchEffect(() => {
@@ -53,9 +57,11 @@ watchEffect(() => {
         </div>
       </RouterLink>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-8"
+      >
         <FilmListing
-          v-for="film in films.slice(0, limit || films.length)"
+          v-for="(film, index) in films.slice(0, limit)"
           :key="film.id"
           :film="film"
         />
