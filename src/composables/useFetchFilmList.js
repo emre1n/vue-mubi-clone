@@ -1,7 +1,7 @@
 import { ref, onMounted } from 'vue';
 import axiosInstance from '@/api/axios';
 
-export function useFetchFilms(listName) {
+export function useFetchFilmList(listName) {
   const films = ref([]);
 
   // https://api.mubi.com/v3/collections/new-on-mubi

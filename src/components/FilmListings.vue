@@ -2,7 +2,7 @@
 import { ref, watchEffect } from 'vue';
 import FilmListing from '@/components/FilmListing.vue';
 import ChevronRightIcon from '@/components/icons/ChevronRightIcon.vue';
-import { useFetchFilms } from '@/composables/useFetchFilms';
+import { useFetchFilmList } from '@/composables/useFetchFilmList';
 
 const props = defineProps({
   limit: {
@@ -18,7 +18,7 @@ const props = defineProps({
   },
 });
 
-const { films } = useFetchFilms(props.listName);
+const { films } = useFetchFilmList(props.listName);
 
 const limit = ref(props.limit);
 

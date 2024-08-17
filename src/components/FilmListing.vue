@@ -1,11 +1,13 @@
 <script setup>
+import { RouterLink } from 'vue-router';
+
 const props = defineProps({
   film: Object,
 });
 </script>
 
 <template>
-  <div class="relative w-80 h-52">
+  <RouterLink :to="`/films/${film.film.slug}`" class="relative w-80 h-52">
     <img
       class="object-cover w-full h-full"
       :src="film.film.stills.standard"
@@ -20,5 +22,5 @@ const props = defineProps({
         {{ film.film.year }}
       </p>
     </div>
-  </div>
+  </RouterLink>
 </template>
