@@ -1,8 +1,11 @@
 <script setup>
-import { ref, watchEffect } from 'vue';
+import { ref, watchEffect, watch, computed } from 'vue';
 import FilmListing from '@/components/FilmListing.vue';
 import ChevronRightIcon from '@/components/icons/ChevronRightIcon.vue';
 import { useFetchFilmList } from '@/composables/useFetchFilmList';
+
+import { useFilmListsStore } from '@/stores/filmLists';
+import { storeToRefs } from 'pinia';
 
 const props = defineProps({
   limit: {
@@ -18,7 +21,24 @@ const props = defineProps({
   },
 });
 
-const { films } = useFetchFilmList(props.listName);
+const filmListsStore = useFilmListsStore();
+let { films } = useFetchFilmList(props.listName);
+
+// Watch for changes in the films data and update the store
+watch(
+  films,
+  newFilms => {
+    if (newFilms) {
+      filmListsStore.addFilmList(props.listName, newFilms);
+    }
+  },
+  { immediate: true }
+);
+
+// Use storeToRefs to maintain reactivity
+const { lists } = storeToRefs(filmListsStore);
+
+films = computed(() => lists.value[props.listName] || []);
 
 const limit = ref(props.limit);
 
